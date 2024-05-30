@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Clase 13 x Vale Navarrete</title>
+        <link rel="icon" type="image/png" href="favicon.png"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.4/chartist.min.css"
+            integrity="sha512-V0+DPzYyLzIiMiWCg3nNdY+NyIiK9bED/T1xNBj08CaIUyK3sXRpB26OUCIzujMevxY9TRJFHQIxTwgzb0jVLg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+        <style>
+            :root {
+                --bs-font-sans-serif: "Poppins", sans-serif;
+                --bs-light-rgb: 255, 125, 117;   
+            }
+
+            .poppins-medium{
+              font-family: "Poppins", sans-serif;
+              font-weight: 500;
+              font-style: normal;
+              font-weight: <weight>;
+            }
+
+            }
+            .ct-series-a .ct-bar,
+            .ct-series-a .ct-line,
+            .ct-series-a .ct-point,
+            .ct-series-a .ct-slice-donut {
+                stroke: rgb(158, 1, 66);
+            }
+            .ct-series-a .ct-area,
+            .ct-series-a .ct-slice-donut-solid,
+            .ct-series-a .ct-slice-pie {
+                fill: rgb(158, 1, 66);
+            }
+            .ct-series-b .ct-bar,
+            .ct-series-b .ct-line,
+            .ct-series-b .ct-point,
+            .ct-series-b .ct-slice-donut {
+                stroke: rgb(219, 73, 74);
+            }
+            .ct-series-b .ct-area,
+            .ct-series-b .ct-slice-donut-solid,
+            .ct-series-b .ct-slice-pie {
+                fill: rgb(219, 73, 74);
+            }
+            .ct-series-c .ct-bar,
+            .ct-series-c .ct-line,
+            .ct-series-c .ct-point,
+            .ct-series-c .ct-slice-donut {
+                stroke: rgb(248, 142, 83);
+            }
+            .ct-series-c .ct-area,
+            .ct-series-c .ct-slice-donut-solid,
+            .ct-series-c .ct-slice-pie {
+                fill: rgb(248, 142, 83);
+            }
+            .ct-series-d .ct-bar,
+            .ct-series-d .ct-line,
+            .ct-series-d .ct-point,
+            .ct-series-d .ct-slice-donut {
+                stroke: rgb(254, 210, 129);
+            }
+            .ct-series-d .ct-area,
+            .ct-series-d .ct-slice-donut-solid,
+            .ct-series-d .ct-slice-pie {
+                fill: rgb(254, 210, 129);
+            }
+
+            .ct-series-e .ct-bar,
+            .ct-series-e .ct-line,
+            .ct-series-e .ct-point,
+            .ct-series-e .ct-slice-donut {
+                stroke: rgb(251, 248, 176);
+            }
+            .ct-series-e .ct-area,
+            .ct-series-e .ct-slice-donut-solid,
+            .ct-series-e .ct-slice-pie {
+                fill: rgb(251, 248, 176);
+            }
+            .ct-series-f .ct-bar,
+            .ct-series-f .ct-line,
+            .ct-series-f .ct-point,
+            .ct-series-f .ct-slice-donut {
+                stroke: rgb(213, 238, 159);
+            }
+            .ct-series-f .ct-area,
+            .ct-series-f .ct-slice-donut-solid,
+            .ct-series-f .ct-slice-pie {
+                fill: rgb(213, 238, 159);
+            }
+            .ct-series-g .ct-bar,
+            .ct-series-g .ct-line,
+            .ct-series-g .ct-point,
+            .ct-series-g .ct-slice-donut {
+                stroke: rgb(137, 207, 165);
+            }
+            .ct-series-g .ct-area,
+            .ct-series-g .ct-slice-donut-solid,
+            .ct-series-g .ct-slice-pie {
+                fill: rgb(137, 207, 165);
+            }
+            .ct-series-h .ct-bar,
+            .ct-series-h .ct-line,
+            .ct-series-h .ct-point,
+            .ct-series-h .ct-slice-donut {
+                stroke: rgb(70, 150, 179);
+            }
+            .ct-series-h .ct-area,
+            .ct-series-h .ct-slice-donut-solid,
+            .ct-series-h .ct-slice-pie {
+                fill: rgb(70, 150, 179);
+            }
+            .ct-series-i .ct-bar,
+            .ct-series-i .ct-line,
+            .ct-series-i .ct-point,
+            .ct-series-i .ct-slice-donut {
+                stroke: rgb(94, 79, 162);
+            }
+            .ct-series-i .ct-area,
+            .ct-series-i .ct-slice-donut-solid,
+            .ct-series-i .ct-slice-pie {
+                fill: rgb(94, 79, 162);
+            }
+
+            figure img{
+                filter: grayscale(0);                
+            } 
+
+            .superame{
+                filter: grayscale(1) blur(1px);
+                transition: all ease 0.2s;
+                
+            }             
+        
+        </style>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.4/chartist.min.js"
+            integrity="sha512-9rxMbTkN9JcgG5euudGbdIbhFZ7KGyAuVomdQDI9qXfPply9BJh0iqA7E/moLCatH2JD4xBGHwV6ezBkCpnjRQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+    </head>
+    <body>
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+          <symbol id="highest" viewBox="0 0 16 16" fill="#4B83FF">
+            <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8m5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0"/>
+            <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195z"/>
+            <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083q.088-.517.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1z"/>
+            <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 6 6 0 0 1 3.13-1.567"/>
+        <symbol id="roi" viewBox="0 0 16 16" fill="#4B83FF">
+            <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5"/>
+        <symbol id="box" viewBox="0 0 16 16" fill="#4B83FF">
+            <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z"/>
+        <symbol id="promedio" viewBox="0 0 16 16" fill="#4B83FF">
+            <path fill-rule="evenodd" d="M.172 15.828a.5.5 0 0 0 .707 0l4.096-4.096V14.5a.5.5 0 1 0 1 0v-3.975a.5.5 0 0 0-.5-.5H1.5a.5.5 0 0 0 0 1h2.768L.172 15.121a.5.5 0 0 0 0 .707M15.828.172a.5.5 0 0 0-.707 0l-4.096 4.096V1.5a.5.5 0 1 0-1 0v3.975a.5.5 0 0 0 .5.5H14.5a.5.5 0 0 0 0-1h-2.768L15.828.879a.5.5 0 0 0 0-.707"/>
+        <symbol id="menor" viewBox="0 0 16 16" fill="#FF4B4B">
+            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
+        </svg>
+
+        <header class="bg-light fixed-top">
+            <div class="container py-3">
+                <div class="row">
+                    <div class="col-10 mx-auto text-center">
+                        <p class="my-0 d-flex justify-content-between align-items-center"><span>Vale Navarrete</span> <span class="d-sm-none">|</span><span>Diseño UC</span></p>
+                    </div>
+                </div>
+            </div>
+        </header>
+ 
+        <figure class="mt-5 mx-2"> 
+            <img id="cambia" src="https://s.studiobinder.com/wp-content/uploads/2020/07/Highest-Grossing-Movies-of-All-Time-What-Makes-a-Blockbuster-Featured.jpg" class="pt-3 w-100">
+        </figure>
+
+        <main class="mt-5">
+            <div class="col-10 mx-auto mb-5 text-center">
+                <h1 class="mb-5">PELÍCULAS MÁS TAQUILLERAS DE LA HISTORIA</h1>
+                <p>A continuación, se presentan diferentes gráficos que muestra: los <strong>géneros</strong> de las películas más taquilleras de la historia, su <strong>recaudación económica</strong> en salas de cine (Box Office) y su <strong>retorno de inversión</strong> (ROI).<br>Este análisis permite observar las preferencias del público a lo largo del tiempo, destacando <strong>cuáles son los tipos de películas que han logrado atraer a una mayor audiencia y generar ingresos significativos en la taquilla mundial.</strong></p>
+            </div>      
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 pe-5">
+                        <h2><svg width="24" height="24"><use href="#highest"/></svg> Highest grossing movies in history</h2>
+                        <object data="viz.svg" type="image/svg+xml" class="w-100">
+                            <img src="alt.png"/>
+                        </object>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="row ps-5">
+                            <div class="col-12 col-sm-6 col-lg-12 py-3">
+                                <h2 class="text-center fs-5"><svg width="24" height="24"><use href="#roi"/></svg> ROI</h2>
+                                <div class="ct-chart1 ct-minor-second"></div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-12 py-3">
+                                <h2 class="text-center fs-5"><svg width="24" height="24"><use href="#box"/></svg> BOX OFFICE</h2>
+                                <div class="ct-chart2 ct-minor-second"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <div class="col-12">
+                        <h2 class="text-center"><svg width="24" height="24"><use href="#promedio"/></svg> COMPARACIÓN PROMEDIOS</h2>
+                        <div class="ct-chart3 ct-major-twelfth"></div>
+                    </div>
+                    <div class="col-12 mt-5 text-center">
+                        <p>A continuación se analizan seis películas de la categoría <strong>ANIMADAS</strong>, las cuales tuvieron el menor ROI</p>
+                    </div>
+                    <div class="col-12 mt-5">
+                        <h2 class="text-center"><svg width="24" height="24"><use href="#menor"/></svg> PELÍCULAS ANIMADAS CON <strong>MENOR</strong> RETORNO DE INVERSIÓN (ROI)</h2>
+                        <div class="ct-chart4 ct-major-twelfth"></div>
+                    </div>
+                    <div class="col-12 mt-5 text-center">
+                        <p><strong>Tristemente, Shrek 2 es la que generó menor retorno.</strong><br>Sin embargo, esto no detuvo a los creadores, ya que lanzaron dos películas más después de esta.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="bg-light">
+            <hr>
+                <div class="container py-1">
+                    <div class="row">
+                        <div class="col-10 mx-auto text-center font-monospace fst-italic fw-lighter">
+                        <p> Clase 13 | 29 de Mayo 2024</p>
+                        </div>
+                    </div>
+                </div>
+        </footer>
+        <script>
+            new Chartist.Pie(
+                ".ct-chart1",
+                {
+                    labels: ["Acción", "Aventura", "Animación", "Biografía", "Crimen", "Drama", "Familia", "Horror", "Musical"],
+                    series: [13.681, 147.625, 81.77, 34.9, 42.8, 37.525, 75.5, 36.8, 66.2],
+                },
+                {
+                    donut: true,
+                    donutWidth: 60,
+                    donutSolid: true,
+                    startAngle: 270,
+                    showLabel: true,
+                }
+            );
+        </script>
+        <script>
+            new Chartist.Pie(
+                ".ct-chart2",
+                {
+                    labels: ["Acción", "Aventura", "Animación", "Biografía", "Crimen", "Drama", "Familia", "Horror", "Musical"],
+                    series: [1284.43, 754.125, 834.27, 286, 246, 879.75, 793, 441, 397],
+                },
+                {
+                    donut: true,
+                    donutWidth: 60,
+                    donutSolid: true,
+                    startAngle: 270,
+                    showLabel: true,
+                }
+            );
+        </script>
+        <script>
+            new Chartist.Bar(
+                ".ct-chart3",
+                {
+                    labels: ["Acción", "Aventura", "Animación", "Biografía", "Crimen", "Drama", "Familia", "Horror", "Musical"],
+                    series: [
+                        [13.681, 147.625, 81.77, 34.9, 42.8, 37.525, 75.5, 36.8, 66.2],
+                        [1284.43, 754.125, 834.27, 286, 246, 879.75, 793, 441, 397],
+                    ],
+                },
+                {
+                    axisX: {
+                        // On the x-axis start means top and end means bottom
+                        position: "start",
+                    },
+                    axisY: {
+                        // On the y-axis start means left and end means right
+                        position: "end",
+                    },
+                }
+            );
+        </script>
+        <script>
+            new Chartist.Bar('.ct-chart4', {
+                  labels: ["Shrek 2", "The Lion King", "Frozen", "Frozen II", "Finding Nemo", "The Lion King"],
+                  series: [6.2, 6.5, 8.5, 9.7, 10.0, 21.5]
+                }, {
+                  distributeSeries: true
+                });
+        </script>
+        <script>
+
+            /*
+            Cuando el scroll supere cierta cantidad de pixeles, agarra la imagen #cambia y aplícale .superame
+            pero, cuando vuelva arriba, que ya no me supere
+            */
+            document.addEventListener("scroll", (event) => {
+                var y = window.scrollY;
+                if (y < 10) {
+                    document.querySelector ("#cambia").classList.add("superame");
+                }
+            });
+
+        </script>
+    </body>
+</html>
